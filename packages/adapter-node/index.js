@@ -9,7 +9,7 @@ const files = fileURLToPath(new URL('./files', import.meta.url).href);
 
 /** @type {import('./index.js').default} */
 export default function (opts = {}) {
-	const { out = 'build', precompress, envPrefix = '' } = opts;
+	const { out = 'build', precompress, envPrefix = '', baseUrl = 'http://localhost:9000', prefix = '/api' } = opts;
 
 	return {
 		name: '@sveltejs/adapter-node',
@@ -83,7 +83,9 @@ export default function (opts = {}) {
 					MANIFEST: './server/manifest.js',
 					SERVER: './server/index.js',
 					SHIMS: './shims.js',
-					ENV_PREFIX: JSON.stringify(envPrefix)
+          			PROXY_HANDLER: './proxy-handler.js',
+					ENV_PREFIX: JSON.stringify(envPrefix),
+          			BASE_URL: JSON.stringify(baseUrl),
 				}
 			});
 		}

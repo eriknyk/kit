@@ -11,7 +11,7 @@ export default [
 			format: 'esm'
 		},
 		plugins: [nodeResolve({ preferBuiltins: true }), commonjs(), json()],
-		external: ['ENV', 'HANDLER', ...builtinModules]
+		external: ['ENV', 'HANDLER', 'PROXY_HANDLER', ...builtinModules]
 	},
 	{
 		input: 'src/env.js',
@@ -31,6 +31,16 @@ export default [
 		},
 		plugins: [nodeResolve(), commonjs(), json()],
 		external: ['ENV', 'MANIFEST', 'SERVER', 'SHIMS', ...builtinModules]
+	},
+	{
+		input: 'src/proxy-handler.js',
+		output: {
+			file: 'files/proxy-handler.js',
+			format: 'esm',
+			inlineDynamicImports: true
+		},
+		plugins: [nodeResolve(), commonjs(), json()],
+		external: ['ENV', 'MANIFEST', 'SERVER', 'SHIMS', 'BASE_URL', 'PROXY_PREFIX', ...builtinModules]
 	},
 	{
 		input: 'src/shims.js',

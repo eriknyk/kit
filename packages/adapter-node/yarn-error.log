@@ -1,0 +1,79 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add http-proxy-middleware
+
+PATH: 
+  /Users/erik/Library/pnpm:/Users/erik/.bun/bin:/Users/erik/.bun/bin:/Users/erik/go/bin:/usr/local/opt/mysql@5.7/bin:/usr/local/opt/php@7.4/bin:/Users/erik/.krew/bin:/Users/erik/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/erik/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities:/usr/local/opt/rabbitmq/sbin:/Users/erik/.dotnet/tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/erik/Library/Caches/Yarn/v6/npm-glob-8.1.0-d388f656593ef708ee3e34640fdfb99a9fd1c33e-integrity/node_modules/glob/README.md' -> '/Users/erik/wf/kit/packages/adapter-node/node_modules/@rollup/plugin-commonjs/node_modules/glob/README.md'
+
+npm manifest: 
+  {
+  	"name": "@eriknyk/adapter-node-proxy",
+  	"version": "1.3.8",
+  	"description": "Adapter for SvelteKit apps that generates a standalone Node server",
+  	"repository": {
+  		"type": "git",
+  		"url": "https://github.com/eriknyk/kit/packages/adapter-node",
+  		"directory": "packages/adapter-node"
+  	},
+  	"license": "MIT",
+  	"homepage": "https://kit.svelte.dev",
+  	"type": "module",
+  	"exports": {
+  		".": {
+  			"types": "./index.d.ts",
+  			"import": "./index.js"
+  		},
+  		"./package.json": "./package.json"
+  	},
+  	"types": "index.d.ts",
+  	"files": [
+  		"files",
+  		"index.js",
+  		"index.d.ts"
+  	],
+  	"scripts": {
+  		"dev": "node -e \"fs.rmSync('files', { force: true, recursive: true })\" && rollup -cw",
+  		"build": "node -e \"fs.rmSync('files', { force: true, recursive: true })\" && rollup -c",
+  		"test": "echo \"tests temporarily disabled\" # c8 vitest run",
+  		"check": "tsc",
+  		"lint": "prettier --check .",
+  		"format": "pnpm lint --write",
+  		"prepublishOnly": "pnpm build"
+  	},
+  	"devDependencies": {
+  		"@polka/url": "^1.0.0-next.23",
+  		"@sveltejs/kit": "workspace:^",
+  		"@types/node": "^16.18.6",
+  		"c8": "^8.0.0",
+  		"polka": "^1.0.0-next.23",
+  		"sirv": "^2.0.3",
+  		"typescript": "^4.9.4",
+  		"vitest": "^0.34.5"
+  	},
+  	"dependencies": {
+  		"@rollup/plugin-commonjs": "^25.0.0",
+  		"@rollup/plugin-json": "^6.0.0",
+  		"@rollup/plugin-node-resolve": "^15.0.1",
+  		"rollup": "^3.7.0"
+  	},
+  	"peerDependencies": {
+  		"@sveltejs/kit": "^1.0.0"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

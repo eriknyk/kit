@@ -9,6 +9,8 @@ interface AdapterOptions {
 	out?: string;
 	precompress?: boolean;
 	envPrefix?: string;
+	baseUrl?: string;
+	prefix?: string;
 }
 
 export default function plugin(options?: AdapterOptions): Adapter;
